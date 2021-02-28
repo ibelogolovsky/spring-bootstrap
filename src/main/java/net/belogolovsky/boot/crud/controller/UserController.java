@@ -17,7 +17,7 @@ public class UserController {
 
     @GetMapping("user")
     public String user(Principal principal, Model model) {
-        User user = userService.findByLogin(principal.getName())
+        User user = userService.findByEmail(principal.getName())
                 .orElseThrow(() -> new RuntimeException("Unable to find user by login: " + principal.getName()));
         model.addAttribute("user", user);
         return "user/info";

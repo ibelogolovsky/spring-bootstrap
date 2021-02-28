@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/admin")
@@ -22,7 +24,14 @@ public class AdminController {
     private RoleService roleService;
 
     @GetMapping()
-    public String index(Model model) {
+    public String index(Model model, Principal principal) {
+        String adminName = principal.getName();
+        User admin = userService.findByEmail(adminName)
+                .orElseThrow(() -> new RuntimeException("Unable to find user by login: " + adminName));
+        String roles = admin.getRoles().stream()
+                .map(s -> s.toString()).collect(Collectors.joining(" "));
+        model.addAttribute("admin", admin);
+        model.addAttribute("roles", roles);
         model.addAttribute("users", userService.listAll());
         return "admin/index";
     }

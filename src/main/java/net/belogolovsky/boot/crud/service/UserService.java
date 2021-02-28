@@ -22,7 +22,7 @@ public interface UserService extends UserDetailsService {
 
     List<User> listAll();
 
-    Optional<User> findByLogin(String login);
+    Optional<User> findByEmail(String email);
 
     @Transactional
     void addRole(User user, String roleName);
