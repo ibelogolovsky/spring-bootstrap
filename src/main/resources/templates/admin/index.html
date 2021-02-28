@@ -39,32 +39,55 @@
             </div>
         </nav>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <!--            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">-->
+            <div >
                 <h1>Admin panel</h1>
-
-<!--&lt;!&ndash;                <div th:each="user : ${users}">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <a th:href="@{/admin/{id}(id=${user.getId()})}"&ndash;&gt;-->
-<!--&lt;!&ndash;                       th:text="|${user.getFirstName()} ${user.getLastName()}|">user</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                </div>&ndash;&gt;-->
-<!--                <br/>-->
-<!--                <a href="/user">Your own page</a>-->
-<!--                <br/>-->
-<!--                <table>-->
-<!--                    <tbody>-->
-<!--                    <tr>-->
-<!--                        <td>-->
-<!--                            <form method="get" action="/admin/new">-->
-<!--                                <input type="submit" value="Add"/>-->
-<!--                            </form>-->
-<!--                        </td>-->
-<!--                        <td>-->
-<!--                            <form method="get" action="/logout">-->
-<!--                                <input type="submit" value="Logout"/>-->
-<!--                            </form>-->
-<!--                        </td>-->
-<!--                    </tr>-->
-<!--                    </tbody>-->
-<!--                </table>-->
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true">Home
+                        </button>
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                                type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile
+                        </button>
+                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                                type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact
+                        </button>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        1
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">2
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">3
+                    </div>
+                </div>
+                <!--&lt;!&ndash;                <div th:each="user : ${users}">&ndash;&gt;-->
+                <!--&lt;!&ndash;                    <a th:href="@{/admin/{id}(id=${user.getId()})}"&ndash;&gt;-->
+                <!--&lt;!&ndash;                       th:text="|${user.getFirstName()} ${user.getLastName()}|">user</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+                <!--                <br/>-->
+                <!--                <a href="/user">Your own page</a>-->
+                <!--                <br/>-->
+                <!--                <table>-->
+                <!--                    <tbody>-->
+                <!--                    <tr>-->
+                <!--                        <td>-->
+                <!--                            <form method="get" action="/admin/new">-->
+                <!--                                <input type="submit" value="Add"/>-->
+                <!--                            </form>-->
+                <!--                        </td>-->
+                <!--                        <td>-->
+                <!--                            <form method="get" action="/logout">-->
+                <!--                                <input type="submit" value="Logout"/>-->
+                <!--                            </form>-->
+                <!--                        </td>-->
+                <!--                    </tr>-->
+                <!--                    </tbody>-->
+                <!--                </table>-->
             </div>
         </main>
     </div>
