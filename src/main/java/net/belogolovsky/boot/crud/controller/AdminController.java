@@ -24,15 +24,17 @@ public class AdminController {
     private RoleService roleService;
 
     @GetMapping()
-    public String index(Model model, Principal principal) {
+    public String index(Model model, Principal principal,
+                        @ModelAttribute("user") User user) {
         String adminName = principal.getName();
         User admin = userService.findByEmail(adminName)
                 .orElseThrow(() -> new RuntimeException("Unable to find user by login: " + adminName));
         String roles = admin.getRoles().stream()
-                .map(s -> s.toString()).collect(Collectors.joining(" "));
+                .map(Role::toString).collect(Collectors.joining(" "));
         model.addAttribute("admin", admin);
         model.addAttribute("roles", roles);
         model.addAttribute("users", userService.listAll());
+        model.addAttribute("allRoles", roleService.listAll());
         return "admin/index";
     }
 
