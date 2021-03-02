@@ -31,6 +31,7 @@ public class AdminController {
                 .orElseThrow(() -> new RuntimeException("Unable to find user by login: " + adminName));
         String roles = admin.getRoles().stream()
                 .map(Role::toString).collect(Collectors.joining(" "));
+        model.addAttribute("service", userService);
         model.addAttribute("admin", admin);
         model.addAttribute("roles", roles);
         model.addAttribute("users", userService.listAll());
