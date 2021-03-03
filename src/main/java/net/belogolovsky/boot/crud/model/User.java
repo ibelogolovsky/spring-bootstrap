@@ -17,9 +17,6 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-//    @Column(name = "login", unique = true, nullable = false)
-//    private String login;
-//
     @Column(name = "name")
     private String firstName;
 
@@ -42,7 +39,6 @@ public class User implements UserDetails {
     private Set<Role> roles = new HashSet<>();
 
     public User(String firstName, String lastName, int age, String email, String password) {
-//        this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -84,11 +80,6 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-//    @Override
-//    public String getUsername() {
-//        return login;
-//    }
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -108,14 +99,6 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
-//    public String getLogin() {
-//        return login;
-//    }
-//
-//    public void setLogin(String login) {
-//        this.login = login;
-//    }
 
     public long getId() {
         return id;

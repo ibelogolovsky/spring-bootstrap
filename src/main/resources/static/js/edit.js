@@ -47,7 +47,6 @@ deleteModal.addEventListener('show.bs.modal', function (event) {
     var age = button.getAttribute('data-bs-age')
     var email = button.getAttribute('data-bs-email')
     var roles = button.getAttribute('data-bs-roles').split(' ')
-    // alert(firstName)
 
     var modalIdInput = deleteModal.querySelector('.modal-body #idDelete')
     var modalFirstNameInput = document.getElementById('firstNameDelete')
