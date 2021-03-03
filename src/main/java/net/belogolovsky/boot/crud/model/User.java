@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "users")
@@ -28,7 +29,7 @@ public class User implements UserDetails {
     @Column
     private int age;
 
-    @Column
+    @Column(unique = true)
     private String email;
 
     @Column(name = "password")
@@ -151,6 +152,15 @@ public class User implements UserDetails {
 
     public Set<Role> getRoles() {
         return roles;
+    }
+
+    public String getRoleIdsAsString(){
+        return roles.stream().map(Role::getId)
+                .map(Object::toString).collect(Collectors.joining(" "));
+    }
+
+    public String getRolesAsString() {
+        return roles.stream().map(Role::toString).collect(Collectors.joining(" "));
     }
 
     public boolean hasRole(Role role) {

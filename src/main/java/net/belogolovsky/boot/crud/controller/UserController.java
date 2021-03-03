@@ -20,6 +20,6 @@ public class UserController {
         User user = userService.findByEmail(principal.getName())
                 .orElseThrow(() -> new RuntimeException("Unable to find user by login: " + principal.getName()));
         model.addAttribute("user", user);
-        return "user/info";
+        return "user";
     }
 }

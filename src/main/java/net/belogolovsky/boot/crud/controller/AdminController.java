@@ -36,16 +36,16 @@ public class AdminController {
         model.addAttribute("roles", roles);
         model.addAttribute("users", userService.listAll());
         model.addAttribute("allRoles", roleService.listAll());
-        return "admin/index";
+        return "admin";
     }
 
-    @GetMapping("/{id}")
+//    @GetMapping("/{id}")
     public String show(@PathVariable("id") long id, Model model) {
         model.addAttribute("user", userService.get(id));
         return "admin/show";
     }
 
-    @GetMapping("/new")
+//    @GetMapping("/new")
     public String newUser(@ModelAttribute("user") User user,
                           Model model) {
         model.addAttribute("allRoles", roleService.listAll());
@@ -62,7 +62,7 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    @GetMapping("/{id}/edit")
+//    @GetMapping("/{id}/edit")
     public String edit(@PathVariable("id") long id, Model model) {
         model.addAttribute("user", userService.get(id));
         model.addAttribute("allRoles", roleService.listAll());
