@@ -19,14 +19,14 @@ public class MainController implements WebMvcConfigurer {
         return "redirect:/login";
     }
 
-//    @RequestMapping("/login.html")
-//    public String login() {
-//        return "login.html";
-//    }
-//
-//    @RequestMapping("/login-error.html")
-//    public String loginError(Model model) {
-//        model.addAttribute("loginError", true);
-//        return "login.html";
-//    }
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping("/login-error")
+    public String loginError(Model model) {
+        model.addAttribute("loginError", true);
+        return "login";
+    }
 }
